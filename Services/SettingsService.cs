@@ -1,6 +1,7 @@
 ﻿using LearningProject.Models;
 using LearningProject.VModels;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -10,6 +11,7 @@ namespace LearningProject.Services
     {
         private readonly TestDbContext _context;
 
+        
         public SettingsService(TestDbContext context)
         {
             _context = context;
@@ -32,7 +34,36 @@ namespace LearningProject.Services
             return shop;
           
         }
+        public async Task<VmShop> AddOrEditShop(VmShop vmShop)
+        {
+            var ObjectToSave = await _context.Shops
+                .SingleOrDefaultAsync(q => q.Id == vmShop.ID);
+            if(ObjectToSave == null)
+            {
+                ObjectToSave=  new Shop();
+                ObjectToSave.Created = DateTime.Now;
+                ObjectToSave.CreatedBy = "TestUser";
+                ObjectToSave.IsActive = true;
+                await _context.AddAsync(ObjectToSave);
 
+            }
+            else
+            {
+                ObjectToSave.Modified = DateTime.Now;
+                ObjectToSave.ModifiedBy = "ModifiedBy";
+            }
+
+            ObjectToSave.Name = vmShop.Name;
+            ObjectToSave.Description = vmShop.Description;
+            ObjectToSave.Address = vmShop.Address;
+            ObjectToSave.ShopNumber = vmShop.ShopNumber;
+            ObjectToSave.Phone = vmShop.Phone;
+            
+           
+            await _context.SaveChangesAsync();
+
+            return vmShop;
+        }
         public async Task<int> DeleteShop(int id)
         {
             int result = -1;

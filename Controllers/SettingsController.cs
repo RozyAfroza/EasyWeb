@@ -20,30 +20,15 @@ namespace LearningProject.Controllers
             _service = service;
         }
 
-        //public IActionResult ShopIndex()
-        //{
-        //    return View();
-        //}
-        [HttpPost]
-        public async Task<IActionResult> AddOrEditShop(int id=0)
+        public IActionResult CreateShop()
         {
-            if(id == 0)
-            {
-                return View();
-            }
-            else
-            {
-                var shop= await _context.Shops.FindAsync(id);
-                if (shop == null)
-                {
-                    return NotFound();
-                }
-                else
-                {
-                  return  View(shop);
-                }
-            }
-              
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> AddOrEditShop(VmShop vmShop)
+        {
+            await Task.Run(() => _service.AddOrEditShop(vmShop));
+            return RedirectToAction(nameof(ShopIndex)); 
         }
         [HttpGet]
         public async Task<ActionResult> ShopIndex()
