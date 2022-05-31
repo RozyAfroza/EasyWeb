@@ -44,5 +44,10 @@ namespace LearningProject.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
+        public IActionResult Admin()
+        {
+            return RedirectToAction(nameof(Admin));
+        }
     }
 }

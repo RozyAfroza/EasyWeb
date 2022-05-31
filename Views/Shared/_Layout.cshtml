@@ -50,7 +50,7 @@
                     <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
                     <li><a class="nav-link scrollto" href="@Url.Action("About")">About</a></li>
                     <li><a class="nav-link scrollto" href="@Url.Action("Services")">Services</a></li>
-                    <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
+                    <li><a class="nav-link scrollto " href="@Url.Action("Index", "Dashboard")">Admin</a></li>
                     <li><a class="nav-link scrollto" href="#team">Team</a></li>
                     <li><a href="blog.html">Blog</a></li>
                     <li class="dropdown">
@@ -80,20 +80,7 @@
             <a href="@Url.Action("Login")"class="get-started-btn scrollto">Log In</a>
         </div>
     </header><!-- End Header -->
-    <!-- ======= Hero Section ======= -->
-    <section id="hero" class="d-flex align-items-center">
-
-        <div class="container" data-aos="zoom-out" data-aos-delay="100">
-            <div class="row">
-                <div class="col-xl-6">
-                    <h1>Bettter digital experience with Presento</h1>
-                    <h2>We are team of talented designers making websites with Bootstrap</h2>
-                    <a href="#about" class="btn-get-started scrollto">Get Started</a>
-                </div>
-            </div>
-        </div>
-
-    </section><!-- End Hero -->
+   
 
     @RenderBody();
     <!-- ======= Footer ======= -->
