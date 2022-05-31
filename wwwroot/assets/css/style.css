@@ -40,7 +40,7 @@ h1, h2, h3, h4, h5, h6 {
   background: #e03a3c;
   width: 40px;
   height: 40px;
-  border-radius: 4px;
+  border-radius: 0px;
   transition: all 0.4s;
 }
 .back-to-top i {
@@ -102,7 +102,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: 30px;
   background: #e03a3c;
   color: #fff;
-  border-radius: 4px;
+  border-radius: 0px;
   padding: 8px 25px;
   white-space: nowrap;
   transition: 0.3s;
@@ -340,7 +340,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 1px;
   display: inline-block;
   padding: 10px 30px;
-  border-radius: 4px;
+  border-radius: 0px;
   transition: 0.5s;
   margin-top: 30px;
   color: #fff;
@@ -565,7 +565,7 @@ section {
   position: relative;
   text-align: center;
   box-shadow: 0px 2px 35px rgba(0, 0, 0, 0.06);
-  border-radius: 4px;
+  border-radius: 0px;
 }
 .counts .count-box i {
   position: absolute;
@@ -577,7 +577,7 @@ section {
   font-size: 24px;
   background: #fff;
   color: #e03a3c;
-  border-radius: 50px;
+  border-radius: 0px;
   border: 2px solid #fff;
   box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.1);
   display: inline-flex;
@@ -675,7 +675,7 @@ section {
 .services .icon-box {
   margin-bottom: 20px;
   padding: 30px;
-  border-radius: 6px;
+  border-radius: 0px;
   background: #252525;
   transition: 0.3s;
 }
@@ -733,7 +733,7 @@ section {
   color: #444444;
   margin-bottom: 5px;
   transition: all 0.3s ease-in-out;
-  border-radius: 3px;
+  border-radius: 0px;
 }
 .portfolio #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active {
   color: #fff;
@@ -884,11 +884,11 @@ section {
   box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
   position: relative;
   background: #fff;
-  border-radius: 15px;
+  border-radius: 0px;
 }
 .testimonials .testimonial-item .testimonial-img {
   width: 90px;
-  border-radius: 10px;
+  border-radius: 0px;
   border: 6px solid #fff;
   float: left;
   margin: 0 10px 0 0;
@@ -945,7 +945,7 @@ section {
   padding: 20px;
   background: #2b2b2b;
   text-align: center;
-  border-radius: 8px;
+  border-radius: 0px;
   position: relative;
   overflow: hidden;
 }
@@ -997,7 +997,7 @@ section {
 .pricing .box .btn-buy {
   display: inline-block;
   padding: 10px 40px 12px 40px;
-  border-radius: 4px;
+  border-radius: 0px;
   color: #fff;
   transition: none;
   font-size: 14px;
@@ -1068,7 +1068,7 @@ section {
 .team .member {
   margin-bottom: 20px;
   overflow: hidden;
-  border-radius: 5px;
+  border-radius: 0px;
   background: #fff;
 }
 .team .member .member-img {
@@ -1090,7 +1090,7 @@ section {
   transition: color 0.3s;
   color: #111111;
   margin: 0 3px;
-  border-radius: 50px;
+  border-radius: 0px;
   width: 36px;
   height: 36px;
   background: #e03a3c;
@@ -1141,7 +1141,7 @@ section {
   text-align: center;
   box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
   padding: 30px 0 32px 0;
-  border-radius: 4px;
+  border-radius: 0px;
 }
 .contact .info-box i {
   font-size: 32px;
@@ -1165,7 +1165,7 @@ section {
 .contact .php-email-form {
   box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
   padding: 30px;
-  border-radius: 4px;
+  border-radius: 0px;
 }
 .contact .php-email-form .error-message {
   display: none;
@@ -1210,7 +1210,7 @@ section {
 .contact .php-email-form input, .contact .php-email-form textarea {
   box-shadow: none;
   font-size: 14px;
-  border-radius: 4px;
+  border-radius: 0px;
 }
 .contact .php-email-form input:focus, .contact .php-email-form textarea:focus {
   border-color: #111111;
@@ -1227,7 +1227,7 @@ section {
   padding: 10px 32px;
   color: #fff;
   transition: 0.4s;
-  border-radius: 4px;
+  border-radius: 0px;
 }
 .contact .php-email-form button[type=submit]:hover {
   background: #e35052;
@@ -1318,7 +1318,7 @@ section {
   padding: 6px 20px;
   transition: 0.3s;
   font-size: 14px;
-  border-radius: 4px;
+  border-radius: 0px;
 }
 .blog .entry .entry-content .read-more a:hover {
   background: #e35052;
@@ -1486,7 +1486,7 @@ section {
   font-size: 14px;
 }
 .blog .blog-comments .reply-form input {
-  border-radius: 4px;
+  border-radius: 0px;
   padding: 10px 10px;
   font-size: 14px;
 }
@@ -1495,7 +1495,7 @@ section {
   border-color: #ee9293;
 }
 .blog .blog-comments .reply-form textarea {
-  border-radius: 4px;
+  border-radius: 0px;
   padding: 10px 10px;
   font-size: 14px;
 }
@@ -1507,7 +1507,7 @@ section {
   margin-bottom: 25px;
 }
 .blog .blog-comments .reply-form .btn-primary {
-  border-radius: 4px;
+  border-radius: 0px;
   padding: 10px 20px;
   border: 0;
   background-color: #111111;
@@ -1566,7 +1566,7 @@ section {
 .blog .sidebar .search-form form input[type=text] {
   border: 0;
   padding: 4px;
-  border-radius: 4px;
+  border-radius: 0px;
   width: calc(100% - 40px);
 }
 .blog .sidebar .search-form form button {
@@ -1582,7 +1582,7 @@ section {
   background: #e03a3c;
   color: #fff;
   transition: 0.3s;
-  border-radius: 0 4px 4px 0;
+  border-radius: 0 0px 4px 0;
   line-height: 0;
 }
 .blog .sidebar .search-form form button i {
@@ -1757,7 +1757,7 @@ section {
   background: #fff;
   padding: 5px 10px;
   position: relative;
-  border-radius: 4px;
+  border-radius: 0px;
   text-align: left;
 }
 #footer .footer-newsletter form input[type=email] {
@@ -1777,7 +1777,7 @@ section {
   background: #e03a3c;
   color: #fff;
   transition: 0.3s;
-  border-radius: 0 4px 4px 0;
+  border-radius: 0 0px 0px 0;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
 }
 #footer .footer-newsletter form input[type=submit]:hover {
@@ -1795,7 +1795,7 @@ section {
   line-height: 1;
   padding: 8px 0;
   margin-right: 4px;
-  border-radius: 4px;
+  border-radius: 0px;
   text-align: center;
   width: 36px;
   height: 36px;

@@ -1,4 +1,5 @@
 using LearningProject.Models;
+using LearningProject.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -31,8 +32,8 @@ namespace LearningProject
                 option.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
             });
 
-            
-                services.AddRazorPages();
+            services.AddTransient<SettingsService>();
+            services.AddRazorPages();
             services.AddMvc();
         }
 

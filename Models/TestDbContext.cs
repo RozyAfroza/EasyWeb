@@ -14,5 +14,7 @@ namespace LearningProject.Models
         }
 
         public DbSet<UserCridential> UserCridentials { get; set; }
+        public DbSet<Shop> Shops { get; set; }
+
     }
 }
