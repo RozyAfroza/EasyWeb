@@ -12,6 +12,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Helpers\DbConnectionHandler.cs" />
+    <Compile Remove="Models\IDbConnectionHandler.cs" />
+    <Compile Remove="Models\ITestDbContext.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\build\config\postcss.config.js" />
     <None Include="wwwroot\build\config\rollup.config.js" />
     <None Include="wwwroot\build\js\AdminLTE.js" />
@@ -1737,12 +1743,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Easy.Common\Easy.Common.csproj" />
   </ItemGroup>
 
 </Project>

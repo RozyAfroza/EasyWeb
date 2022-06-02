@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LearningProject.Services
 {
-    public class SettingsService
+    public class SettingsService : ISettingsService
     {
         private readonly TestDbContext _context;
 
@@ -44,7 +44,7 @@ namespace LearningProject.Services
                 ObjectToSave.Created = DateTime.Now;
                 ObjectToSave.CreatedBy = "TestUser";
                 ObjectToSave.IsActive = true;
-                await _context.AddAsync(ObjectToSave);
+                await _context.Shops.AddAsync(ObjectToSave);
 
             }
             else
@@ -60,7 +60,7 @@ namespace LearningProject.Services
             ObjectToSave.Phone = vmShop.Phone;
             
            
-            await _context.SaveChangesAsync();
+            await _context.SaveAsync();
 
             return vmShop;
         }
@@ -73,10 +73,34 @@ namespace LearningProject.Services
                     .SingleOrDefaultAsync(q=>q.Id==id);
 
                 shop.IsActive = false;
-                 _context.Update(shop);
-                result= await _context.SaveChangesAsync(); 
+                 _context.Shops.Update(shop);
+                result= await _context.SaveAsync(); 
             }
             return result;
+        }
+
+
+
+        public async Task<VmUser> GetUsers()
+        {
+
+            VmUser user = new VmUser();
+
+            user.DataList = await _context.UserCredentials
+                .Where(q => q.IsActive == true)
+                .Select(s => new VmUser
+                {
+                    EntityId = s.EntityId,
+                    Name = s.Name,
+                    UserName = s.UserName,
+                    Email = s.Email,
+                    Phone = s.Phone,
+                    UserTypeID = s.UserTypeID
+                }).ToListAsync();
+
+            return user;
+           
+
         }
     }
 }

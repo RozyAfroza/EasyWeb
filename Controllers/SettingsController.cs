@@ -1,25 +1,28 @@
-﻿using LearningProject.Models;
+﻿using Easy.Common.Enums;
+using LearningProject.Models;
 using LearningProject.Services;
 using LearningProject.VModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace LearningProject.Controllers
 {
+   // [Authorize(Roles = AuthorizeRoleCollection.Employee)]
     public class SettingsController : Controller
     {
         private HttpContext httpContext;
         private readonly TestDbContext _context;
-        private readonly SettingsService _service;
-        public SettingsController(TestDbContext context, SettingsService service)
+        private readonly ISettingsService _service;
+        public SettingsController(TestDbContext context, ISettingsService service)
         {
             _context = context;
             _service = service;
         }
-
         public IActionResult CreateShop()
         {
             return View();
@@ -40,42 +43,18 @@ namespace LearningProject.Controllers
         [HttpPost]
         public async Task<ActionResult> DeleteShop(int id)
         {
-             await Task.Run(() => _service.DeleteShop(id));
+            await Task.Run(() => _service.DeleteShop(id));
             return RedirectToAction(nameof(ShopIndex));
         }
-    
 
+        [HttpGet]
+        public async Task<ActionResult> UserIndex()
+        {
+            VmUser vmUser = new VmUser();
+            vmUser = await Task.Run(() => _service.GetUsers());
+            return View(vmUser);
+          
+        }
 
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> AddOrEdit(int id, [Bind("ShopId,Name,Description,ShopNumber,Address,Phone")] Shop shop)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        //Insert
-        //        if (id == 0)
-        //        {
-        //            shop.Created = DateTime.Now;
-        //            shop.CreatedBy = "TestUser";
-        //            _context.Add(shop);
-        //            await _context.SaveChangesAsync();
-        //        }
-        //        //Update
-        //        else
-        //        {
-        //            try
-        //            {
-        //                _context.Update(shop);
-        //                await _context.SaveChangesAsync();
-        //            }
-        //            catch (Exception ex)
-        //            {
-
-        //            }
-        //        }
-        //        return Json(new { isValid = true, html = Helper.RenderRazorViewToString(this, "_ViewAll", _context.Shops.ToList()) });
-        //    }
-        //    return Json(new { isValid = false, html = Helper.RenderRazorViewToString(this, "AddOrEdit", shop) });
-        //}
     }
 }
